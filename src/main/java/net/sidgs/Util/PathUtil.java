@@ -30,10 +30,10 @@ public class PathUtil {
             }
 
         }
-        findRoutes(fromGate,toGate);
+        printPaths(findRoutes(fromGate,toGate),bageNumber);
     }
 
-    private void findRoutes(String fromGate, String toGate) {
+    private Path findRoutes(String fromGate, String toGate) {
 
         List<Node> initialPath=new LinkedList<Node>();
         initialPath.add(new Node(fromGate));
@@ -48,7 +48,7 @@ public class PathUtil {
                 else
                     break;
             } else {
-                List<String> connections = getConnections(currentPath.getNodes().get(currentPath.getNodes().size() - 1));
+                List<String> connections = getConnections(currentPathNode);
                 removeBackwardConnections(connections);
                 if(connections.size()==0) {
                     if (paths.size() > 0)
@@ -62,27 +62,54 @@ public class PathUtil {
                         createPath(connections.get(i));
                     //updating current node
                     currentPath.getNodes().add(new Node(connections.get(0)));
+                    int nodeToNodeTime= getTime(currentPathNode.getName(),connections.get(0));
+                    currentPath.setTime(currentPath.getTime()+nodeToNodeTime);
+
+
                 }
             }
         }
-        printPaths();
+        return bestPath();
 
     }
 
-    private void printPaths() {
-        for (Path path: successPath)
-            System.out.println(path);
+    private Path bestPath() {
+        int min=0;
+        for(int i=0;i<successPath.size()-1;i++){
+            Path nextPath=successPath.get(i+1);
+            if(currentPath.getTime()>nextPath.getTime())
+                min=i+1;
+        }
+        return successPath.get(min);
+    }
+
+    private int getTime(String currentPathNodeName, String newNodeName) {
+        for(Connection connection: conncetions){
+            if(connection.getNode1().equals(currentPathNodeName) && connection.getNode2().equals(newNodeName))
+                return connection.getTime();
+            if(connection.getNode2().equals(currentPathNodeName) && connection.getNode1().equals(newNodeName))
+                return connection.getTime();
+
+        }
+        return 0;
+    }
+
+    private void printPaths(Path path, String bageNumber) {
+            System.out.println(bageNumber+" "+path);
     }
 
     private void createPath(String s) {
         Path path= new Path();
         //copying object
+        String name=null;
         for(Node node : currentPath.getNodes()){
-            String name=node.getName();
+            name=node.getName();
             path.getNodes().add(new Node(name));
         }
+        int nodeToNodeTime=getTime(name,s);
         //adding new node to the path
         path.getNodes().add(new Node(s));
+        path.setTime(currentPath.getTime()+nodeToNodeTime);
         paths.add(path);
     }
 

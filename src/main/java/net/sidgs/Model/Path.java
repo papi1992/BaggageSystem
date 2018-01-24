@@ -38,9 +38,12 @@ public class Path {
 
     @Override
     public String toString() {
-        return "Path{" +
-                "nodes=" + nodes +
-                ", time=" + time +
-                '}';
+        String result="";
+        for(Node node : nodes){
+            result+=node.getName().toUpperCase();
+            result+=" ";
+        }
+        result=result + ": "+time;
+        return result;
     }
 }
