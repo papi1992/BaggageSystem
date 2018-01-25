@@ -1,7 +1,8 @@
 package net.sidgs.Model;
 
 /**
- * Created by annap on 1/23/2018.
+ * Created by annapureddy on 1/23/2018.
+ * this class says about connections of nodes with time when # Section: Conveyor System data pass
  */
 public class Connection {
     String node1;
@@ -23,7 +24,6 @@ public class Connection {
     }
 
     public void setNode1(String node1) {
-        //TODO eleminate duplicate connections
         this.node1 = node1;
     }
 

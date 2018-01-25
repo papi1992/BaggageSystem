@@ -1,7 +1,8 @@
 package net.sidgs.Model;
 
 /**
- * Created by annap on 1/23/2018.
+ * Created by annapuredy on 1/23/2018.
+ * simple class for node
  */
 public class Node {
     String name;

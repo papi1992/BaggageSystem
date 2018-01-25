@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by annap on 1/23/2018.
+ * Created by annapureddy on 1/23/2018.
+ *uses list collections to store list of nodes.
  */
 public class Path {
 

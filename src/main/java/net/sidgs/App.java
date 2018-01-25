@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * Hello world!
+ *takes sample data through scanner and ProcessCommand class process will process that data
  *
  */
 public class App 

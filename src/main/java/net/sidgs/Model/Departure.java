@@ -1,7 +1,8 @@
 package net.sidgs.Model;
 
 /**
- * Created by annap on 1/23/2018.
+ * Created by annapureddy on 1/23/2018.
+ * it will process Departure Data
  */
 public class Departure {
     String flightId;
