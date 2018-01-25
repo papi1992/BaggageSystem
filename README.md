@@ -1,15 +1,28 @@
-# BaggageSystem
-You have been asked to implement a system that will route bags to their flights or the proper baggage claim,The input describes the airport conveyor system, the departing flights, and the bags to be routed.
-The output is the optimal routing to get bags to their destinations.
-Bags with a flight id of “ARRIVAL” are terminating in Denver are routed to Baggage Claim.
- I used Multilayer Design Pattern and 
- Input:The input consists of several sections.The beginning of each section is marked by a line starting: “# Section:” 
- Section 1: A weighted bi-directional graph describing the conveyor system. Format: <Node 1> <Node 2> <travel_time> 
- Section 2: Departure list Format: <flight_id> <flight_gate> <flight_time>
- Section 3: Bag list Format: <bag_number> <entry_point> <flight_id>
+#BaggageSystem 
+An Airport has decided to give an automated baggage system another shot. The hardware and tracking systems from the previous attempt are still in place, they just need a system to route the baggage.  The system will route baggage checked, connecting, and terminating in Denver.
 
-Output: The optimized route for each bag <Bag_Number> <point_1> <point_2> [<point_3>, …] : <total_travel_time> The output should be in the same order as the Bag list section of the input.
+You have been asked to implement a system that will route bags to their flights or the proper baggage claim.  The input describes the airport conveyor system, the departing flights, and the bags to be routed.  The output is the optimal routing to get bags to their destinations.  Bags with a flight id of “ARRIVAL” are terminating in Denver are routed to Baggage Claim.
+
+Input: The input consists of several sections.  The beginning of each section is marked by a line starting: “# Section:”
+```
+Section 1: A weighted bi-directional graph describing the conveyor system.
+Format: <Node 1> <Node 2> <travel_time>
+
+Section 2: Departure list Format:
+<flight_id> <flight_gate> <destination> <flight_time>
+Section 3: Bag list Format:
+<bag_number> <entry_point> <flight_id>
+```
+
+Output: The optimized route for each bag
+```
+<Bag_Number> <point_1> <point_2> [<point_3>, …] : <total_travel_time>
+```
+
+The output should be in the same order as the Bag list section of the input.
+
 Example Input:
+```
 # Section: Conveyor System
 Concourse_A_Ticketing A5 5
 A5 BaggageClaim 5
@@ -38,16 +51,20 @@ UA18 A5 LAX 10:15
 0003 A2 UA10
 0004 A8 UA18
 0005 A7 ARRIVAL
- 
+```
+
 Example Output:
+```
 0001 Concourse_A_Ticketing A5 A1 : 11
 0002 A5 A1 A2 A3 A4 : 9
 0003 A2 A1 : 1
 0004 A8 A9 A10 A5 : 6
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
+```
 
-USage :
-1.git clone https://github.com/papi1992/BaggageSystem/new/master?readme=1
-2. cd airport-baggage-routing;
+# Usage:
+```
+1. git clone https://github.com/papi1992/BaggageSystem
+2. cd BaggageSystem;
 3. mvn clean install
-4. java -jar target/airport-baggage-routing.jar src/test/data/InputTestData.txt
+4. java -jar BaggageSystem.jar
