@@ -11,13 +11,20 @@ import static net.sidgs.Util.Data.nodes;
 
 /**
  * Created by annapureddy on 1/23/2018.
- * it takes sample data from console and based upon # sections name it separeate and store it in collections
- * if sample data does't  match requirment it will say invalid command
- * it adds data to departures ,connections and nodes collections
+ * it takes sample data from console
  */
 public class ProcessCommand {
-    //take input and spliting  sections based upon # section
-    public boolean  execute(String command) throws InvalidCommandException {
+    /**
+     *
+     * @param command
+     * @return
+     * @throws InvalidCommandException
+     *  take input and spliting  sections based upon # section
+     *  if sample data does't  match requirment it will say invalid command
+     *  validates tokens and store it in corresponding collections like departures, connections and nodes
+     */
+
+    public boolean execute(String command) throws InvalidCommandException {
         if(command==null){
             return false;
         }
@@ -87,11 +94,18 @@ public class ProcessCommand {
         conncetions.add(new Connection(node1, node2, Integer.parseInt(time)));
     }
 
+    /**
+     * insert node to collections
+     * @param name
+     */
     private void insertNode(String name) {
         nodes.add(new Node(name));
 
     }
 
+    /**
+     *
+     */
     void printNodesAndConnections() {
         for (Connection connection : conncetions)
             System.out.println(connection);

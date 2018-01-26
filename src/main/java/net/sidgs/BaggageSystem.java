@@ -10,7 +10,7 @@ import java.util.Scanner;
  *takes sample data through scanner and ProcessCommand class process will process that data
  *
  */
-public class App 
+public class BaggageSystem
 {
     public static void main( String[] args )
     {
@@ -23,9 +23,8 @@ public class App
             try {
                 processCommand.execute(temp);
             } catch (InvalidCommandException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Illegal arguments or inputs. Please refer to readme for the input data format.");
             }
-
         }
     }
 }

@@ -135,7 +135,7 @@ public class PathUtil {
     }
 
     /**
-     * this method remove any backward connections that  means any recitative connections
+     * this method remove any backward connections if it has any repitative connections
      */
     private void removeBackwardConnections(List<String> connections) {
 
