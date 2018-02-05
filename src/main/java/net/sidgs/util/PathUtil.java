@@ -1,14 +1,14 @@
-package net.sidgs.Util;
-
-import net.sidgs.Model.Connection;
-import net.sidgs.Model.Departure;
-import net.sidgs.Model.Node;
-import net.sidgs.Model.Path;
+package net.sidgs.util;
+import net.sidgs.model.Connection;
+import net.sidgs.model.Departure;
+import net.sidgs.model.Node;
+import net.sidgs.model.Path;
+import net.sidgs.view.Display;
 
 import java.util.*;
 
-import static net.sidgs.Util.Data.conncetions;
-import static net.sidgs.Util.Data.departures;
+import static net.sidgs.util.Data.conncetions;
+import static net.sidgs.util.Data.departures;
 
 /**
  * Created by annapureddy on 1/23/2018.
@@ -39,7 +39,8 @@ public class PathUtil {
             }
 
         }
-        printPaths(findRoutes(fromGate, toGate), bageNumber);
+        Path path = findRoutes(fromGate, toGate);
+        Display.printPaths(path,bageNumber);
     }
 
     /**
@@ -112,9 +113,7 @@ public class PathUtil {
         return 0;
     }
 
-    private void printPaths(Path path, String bageNumber) {
-        System.out.println(bageNumber + " " + path);
-    }
+
 
     /**
      * this method will copy the path object and add new node to path

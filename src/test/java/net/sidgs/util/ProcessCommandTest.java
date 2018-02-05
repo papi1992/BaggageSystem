@@ -1,18 +1,11 @@
-package net.sidgs.Util;
+package net.sidgs.util;
 
-import net.sidgs.Error.InvalidCommandException;
-import org.junit.Before;
+import net.sidgs.controller.ProcessCommand;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.when;
 
 /**
  * Created by annap on 1/24/2018.

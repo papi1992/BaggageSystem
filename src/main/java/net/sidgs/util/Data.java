@@ -1,8 +1,8 @@
-package net.sidgs.Util;
+package net.sidgs.util;
 
-import net.sidgs.Model.Connection;
-import net.sidgs.Model.Departure;
-import net.sidgs.Model.Node;
+import net.sidgs.model.Connection;
+import net.sidgs.model.Departure;
+import net.sidgs.model.Node;
 
 import java.util.HashSet;
 import java.util.Set;

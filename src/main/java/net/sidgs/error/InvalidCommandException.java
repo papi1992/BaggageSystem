@@ -1,4 +1,4 @@
-package net.sidgs.Error;
+package net.sidgs.error;
 
 /**
  * Created by annapureddy on 1/23/2018.

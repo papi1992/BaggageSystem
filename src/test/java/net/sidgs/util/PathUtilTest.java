@@ -1,14 +1,11 @@
-package net.sidgs.Util;
+package net.sidgs.util;
 
-import net.sidgs.Model.Departure;
-import net.sidgs.Model.Path;
-import org.junit.Assert;
+import net.sidgs.model.Departure;
+import net.sidgs.model.Path;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Set;
 
 /**

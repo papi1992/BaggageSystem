@@ -1,4 +1,4 @@
-package net.sidgs.Model;
+package net.sidgs.model;
 
 /**
  * Created by annapureddy on 1/23/2018.

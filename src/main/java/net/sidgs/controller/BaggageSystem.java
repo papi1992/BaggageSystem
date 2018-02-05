@@ -1,7 +1,6 @@
-package net.sidgs;
+package net.sidgs.controller;
 
-import net.sidgs.Error.InvalidCommandException;
-import net.sidgs.Util.ProcessCommand;
+import net.sidgs.error.InvalidCommandException;
 
 import java.util.Scanner;
 

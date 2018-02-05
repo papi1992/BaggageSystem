@@ -1,9 +1,7 @@
-package net.sidgs.Model;
+package net.sidgs.model;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by annapureddy on 1/23/2018.
